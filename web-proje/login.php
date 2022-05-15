@@ -58,7 +58,7 @@
             <a class="nav-link" href="login.html">Giriş Yap</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="ilet.html">İletişim</a>
+            <a class="nav-link" href="iletisim.html">İletişim</a>
         </li>     
       </ul>
     </div>
@@ -72,20 +72,28 @@
     </header>
     <main class="justify">
 
-            <!-- partial:index.partial.html -->
-        <div class="center"></div>
+        <div class="container mt-5 w-50 text-center p-5">
+        
+            <?php 
+                $admin = "b211210377@sakarya.edu.tr";
+                $password = "b211210377";
+                $namesurname="Berat Özdin";
 
-        <form method="POST" action="login.php">
-        <div class="form-field">
-            <input type="email"  name="email" placeholder="Email / Username" required/>
+                if (($_POST["email"] == $admin) and ($_POST["password"] == $password)){        
+                echo("<br> <br> Hoşgeldiniz , $password");                  
+                header("Refresh: 2; url=index.html");
+                
+                }
+            
+                else{
+                    echo "Kullancı Adı veya Şifre Yanlış.<br> <br>";
+                    echo "TEKRAR DENEYİNİZ";
+                    header("Refresh: 2; url=login.html");
+                }
+            
+            ?>
+        
         </div>
-        <div class="form-field">
-            <input type="password" name="password" placeholder="Password" required/>
-        </div>
-        <div class="form-field">
-            <button class="btn" type="submit">Giriş</button>
-        </div>
-        </form>
 
     </main>
 
